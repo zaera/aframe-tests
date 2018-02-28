@@ -17,11 +17,19 @@ AFRAME.registerComponent('mapbox-terrain', {
 		},
 	},
 	init: function () {
+        
+        
 		// https://www.mapbox.com/studio/account/tokens/
 		var access_token = 'pk.eyJ1IjoiemFlcmEiLCJhIjoiY2o3YnlzbzY3MHlpdjMxcGxqMzZzMXExZSJ9.UcS30k8fGS4bC7fujuKarw'
 
-		var mapLatitude = this.data.latitude
-		var mapLongitude = this.data.longitude
+    
+       // 44.887330, -93.403119
+
+
+		var mapLatitude = this.data.latitude +0.887330
+		var mapLongitude = this.data.longitude -117.403119
+        console.log("LAT: "+mapLatitude)
+        console.log("LONG: "+mapLongitude)
 		var mapZoomLevel = this.data['zoom-level']
 		var tileX = long2tile(mapLongitude, mapZoomLevel)
 		var tileY = lat2tile(mapLatitude, mapZoomLevel)
@@ -76,10 +84,10 @@ AFRAME.registerComponent('mapbox-terrain', {
 						//height /= 3
                         
                     	//height /= 100000
-					//	height /= 3
+						//height /= 3
 
-					//	var offsetPosition = (y*canvas.width + x)*3
-					//	positions[offsetPosition+2] = height
+						//var offsetPosition = (y*canvas.width + x)*3
+						//positions[offsetPosition+2] = height
 					}
 				}
 				//geometry.attributes.position.needsUpdate = true
@@ -121,6 +129,11 @@ AFRAME.registerComponent('mapbox-terrain', {
 			request.responseType = 'blob';
 			request.send();
 		}
+        
+        
+        
+        
+        
 	},
 	tick: function(){
 		// this._portalDoor.update()
