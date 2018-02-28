@@ -1,0 +1,36 @@
+<html>
+  <head>
+ <!--    <script src="../build.js"></script>-->
+
+      
+      <script src="aframe.min.js"></script>
+
+   
+    <meta charset="utf-8"></meta>
+    <style>
+      body{
+        font-family: 'roboto', 'open sans', sans-serif;
+      }
+     </style>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+      </a-assets>
+      <a-sky color="#cef"></a-sky>
+      <a-entity geometry="primitive: box" scale="0.5 2 0.5" rotation="0 22d 0" position="0 2 -4" draw="width: 128; height: 512;" htmltexture="asset: .tower"></a-entity>
+      <a-entity id="box" geometry="primitive: box" position="-3 1 -4" draw="width: 512; height: 512;" htmltexture="asset: #hello"></a-entity>
+      <a-entity geometry="primitive: box" position="3 1 -4" draw="width: 64; height: 64;" 
+      htmltexture="asset: #goodbye"></a-entity>
+        
+        <a-mapbox-terrain position="0 0 0"   latitude='44.000000' longitude='24.000000' zoom-level='12'/>  
+        <a-mapbox-terrain position="0 0 2"   latitude='43.900000' longitude='24.000000' zoom-level='12'/> 
+       
+        <a-mapbox-terrain position="2 0 -2"   latitude='44.000000' longitude='24.100000' zoom-level='12'/>   
+        <a-mapbox-terrain position="2 0 0"   latitude='44.000000' longitude='24.200000' zoom-level='12'/>   
+    </a-scene>
+  </body>
+</html>
+
+   <script src="mapbox-terrain.js" charset="utf-8"></script>
